@@ -19,6 +19,29 @@
             gap: 1rem;
             width: 33%;
 
+            .currency-container,
+            .language-container {
+                cursor: pointer;
+
+                svg {
+                    width: 25px;
+                    height: 25px;
+                    display: flex;
+                    align-items: center;
+                    background: transparent;
+                    justify-content: center;
+                    border-radius: 50%;
+                    transition: all .1s ease-out;
+                }
+
+                &:hover {
+
+                    svg {
+                        background-color: var(--light-gray);
+                    }
+                }
+            }
+
             .language-container {
                 display: flex;
                 align-items: center;
@@ -39,12 +62,18 @@
             }
         }
 
-        .header-title {
-            font-size: 28px;
-            font-weight: 700;
-            letter-spacing: 2px;
+        .header-title-container {
             width: 33%;
             text-align: center;
+            display: flex;
+            justify-content: center;
+
+            .header-title {
+                font-size: 28px;
+                font-weight: 700;
+                letter-spacing: 2px;
+                cursor: pointer;
+            }
         }
 
         .header-buttons {

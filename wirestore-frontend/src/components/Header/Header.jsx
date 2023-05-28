@@ -4,6 +4,7 @@ import './Header.scss';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import PersonIcon from '@mui/icons-material/Person';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 const Header = () => {
   return (
@@ -13,13 +14,17 @@ const Header = () => {
           <div className="language-container">
             <img src="assets\flags\english_flag.jpg" alt="flag-icon" />
             <p>ENGLISH</p>
+            <KeyboardArrowDownIcon />
           </div>
           <div className="currency-container">
             <p className="symbol">$</p>
             <p className="name">USD</p>
+            <KeyboardArrowDownIcon />
           </div>
         </div>
-        <h1 className="header-title">WIRESTORE</h1>
+        <div className="header-title-container">
+          <h1 className="header-title">WIRESTORE</h1>
+        </div>
         <div className="header-buttons">
           <div className="search-container">
             <SearchOutlinedIcon />
