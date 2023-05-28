@@ -1,0 +1,53 @@
+.header-component-container {
+    top: 0;
+    width: 100%;
+    height: 60px;
+    border-bottom: 1px solid var(--light-gray);
+
+    .header-component {
+        max-width: 1400px;
+        height: 100%;
+        margin: 0 auto;
+        padding: 0 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .header-options {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+
+            .language-container {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+
+                img {
+                    width: 30px;
+                    height: 18px;
+                    object-fit: cover;
+                    border-radius: 2px;
+                }
+            }
+
+            .currency-container {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+            }
+        }
+
+        .header-title {
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .header-buttons {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+    }
+}
