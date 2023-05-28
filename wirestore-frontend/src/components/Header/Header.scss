@@ -17,6 +17,7 @@
             display: flex;
             align-items: center;
             gap: 1rem;
+            width: 33%;
 
             .language-container {
                 display: flex;
@@ -42,12 +43,54 @@
             font-size: 28px;
             font-weight: 700;
             letter-spacing: 2px;
+            width: 33%;
+            text-align: center;
         }
 
         .header-buttons {
             display: flex;
             align-items: center;
+            justify-content: end;
             gap: 10px;
+            width: 33%;
+
+            .cart-container,
+            .search-container,
+            .profile-container {
+                width: 40px;
+                height: 40px;
+                display: flex;
+                align-items: center;
+                background: transparent;
+                justify-content: center;
+                border-radius: 50%;
+                transition: all .1s ease-out;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: var(--light-gray);
+                }
+            }
+
+            .cart-container {
+                position: relative;
+
+                span {
+                    position: absolute;
+                    bottom: 5px;
+                    right: 5px;
+                    width: 16px;
+                    height: 16px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: white;
+                    background: var(--secondary-color);
+                    font-size: 10px;
+                    font-weight: 700;
+                    border-radius: 50%;
+                }
+            }
         }
     }
 }
