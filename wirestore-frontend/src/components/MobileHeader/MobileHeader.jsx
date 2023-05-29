@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import './MobileHeader.scss';
 
 import CloseIcon from '@mui/icons-material/Close';
@@ -67,7 +67,7 @@ const MobileHeader = ({ inputVal = '', headerItems }) => {
           <ul>
             {headerItems.map((x, i) => (
               <li key={i} className={`${pathname === x.url ? 'selected' : ''}`}>
-                {x.display}
+                <Link to={x.url}>{x.display}</Link>
               </li>
             ))}
           </ul>

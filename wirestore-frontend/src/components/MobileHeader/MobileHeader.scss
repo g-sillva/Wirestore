@@ -177,12 +177,16 @@
                     transition: color .1s ease-out;
     
                     &:hover {
-                        color: var(--secondary-color);
+                        a {
+                            color: var(--secondary-color);
+                        }
                     }
                 }
     
                 .selected {
-                    color: var(--secondary-color);
+                    a {
+                        color: var(--secondary-color);
+                    }
                 }
             }
         }
