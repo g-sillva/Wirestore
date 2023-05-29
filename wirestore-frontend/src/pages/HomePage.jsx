@@ -2,26 +2,26 @@ import React from 'react';
 import MobileHeader from '../components/MobileHeader/MobileHeader';
 // import Header from '../components/Header/Header';
 
-const subHeaderItems = [
+const headerItems = [
   {
     display: 'HOME',
     url: '/',
   },
   {
     display: 'COMPUTERS',
-    url: '/',
+    url: '/computers',
   },
   {
     display: 'LAPTOPS',
-    url: '/',
+    url: '/laptops',
   },
   {
     display: 'BUILD',
-    url: '/',
+    url: '/build',
   },
   {
     display: 'CONTACT',
-    url: '/',
+    url: '/contact',
   },
 ];
 
@@ -29,7 +29,7 @@ const HomePage = () => {
   return (
     <div>
       {/* <Header headerItems={subHeaderItems} /> */}
-      <MobileHeader headerItems={subHeaderItems} />
+      <MobileHeader headerItems={headerItems} />
       HomePage
     </div>
   );

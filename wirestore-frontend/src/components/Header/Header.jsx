@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import './Header.scss';
 
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
@@ -9,6 +10,8 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 const Header = ({ inputVal = '', headerItems }) => {
   const [isSearchInputOpen, setIsSearchInputOpen] = useState(false);
   const [searchValue, setSearchValue] = useState(inputVal);
+
+  const { pathname } = useLocation();
 
   return (
     <header className="header-component-container">
@@ -57,7 +60,7 @@ const Header = ({ inputVal = '', headerItems }) => {
       <div className="subheader-component">
         <ul>
           {headerItems.map((x, i) => (
-            <li key={i} className="selected">
+            <li key={i} className={`${pathname === x.url ? 'selected' : ''}`}>
               {x.display}
             </li>
           ))}

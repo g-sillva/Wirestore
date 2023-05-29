@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import './MobileHeader.scss';
 
 import CloseIcon from '@mui/icons-material/Close';
@@ -11,6 +12,8 @@ import MenuIcon from '@mui/icons-material/Menu';
 const MobileHeader = ({ inputVal = '', headerItems }) => {
   const [searchValue, setSearchValue] = useState(inputVal);
   const [isMobileHeaderOpen, setIsMobileHeaderOpen] = useState(false);
+
+  const { pathname } = useLocation();
 
   return (
     <header className="mobile-header-component-container">
@@ -63,7 +66,7 @@ const MobileHeader = ({ inputVal = '', headerItems }) => {
         <div className="mobile-header-items-container">
           <ul>
             {headerItems.map((x, i) => (
-              <li key={i} className="selected">
+              <li key={i} className={`${pathname === x.url ? 'selected' : ''}`}>
                 {x.display}
               </li>
             ))}
