@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Header.scss';
 
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
@@ -6,7 +6,10 @@ import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import PersonIcon from '@mui/icons-material/Person';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
-const Header = () => {
+const Header = ({ inputVal = '' }) => {
+  const [isSearchInputOpen, setIsSearchInputOpen] = useState(false);
+  const [searchValue, setSearchValue] = useState(inputVal);
+
   return (
     <header className="header-component-container">
       <div className="header-component">
@@ -26,7 +29,20 @@ const Header = () => {
           <h1 className="header-title">WIRESTORE</h1>
         </div>
         <div className="header-buttons">
-          <div className="search-container">
+          {isSearchInputOpen && (
+            <div className="input-container">
+              <input
+                type="text"
+                onChange={(e) => setSearchValue(e.target.value)}
+                placeholder="Search..."
+                value={searchValue}
+              />
+            </div>
+          )}
+          <div
+            className="search-container"
+            onClick={() => setIsSearchInputOpen(!isSearchInputOpen)}
+          >
             <SearchOutlinedIcon />
           </div>
           <div className="cart-container">

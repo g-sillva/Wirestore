@@ -19,6 +19,10 @@
             gap: 1rem;
             width: 33%;
 
+            p {
+                font-size: 14px;
+            }
+
             .currency-container,
             .language-container {
                 cursor: pointer;
@@ -86,8 +90,10 @@
             .cart-container,
             .search-container,
             .profile-container {
-                width: 40px;
-                height: 40px;
+                min-width: 40px;
+                max-width: 40px;
+                min-height: 40px;
+                max-height: 40px;
                 display: flex;
                 align-items: center;
                 background: transparent;
@@ -98,6 +104,22 @@
 
                 &:hover {
                     background-color: var(--light-gray);
+                }
+            }
+
+            .input-container {
+                position: relative;
+                width: 100%;
+
+                input {
+                    background: var(--light-gray);
+                    font-size: 16px;
+                    width: 98%;
+                    padding: 5px;
+                    border-radius: 2px;
+                    outline: none;
+                    font-size: 14px;
+                    animation: .5s appearInput forwards ease-in-out;
                 }
             }
 
@@ -121,5 +143,14 @@
                 }
             }
         }
+    }
+}
+
+@keyframes appearInput {
+    from {
+        clip-path: inset(0 0 0 100%);
+    }
+    to {
+        clip-path: inset(0 0 0 0);
     }
 }
