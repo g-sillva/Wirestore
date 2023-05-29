@@ -54,6 +54,15 @@ const Header = ({ inputVal = '' }) => {
           </div>
         </div>
       </div>
+      <div className="subheader-component">
+        <ul>
+          <li className="selected">HOME</li>
+          <li>COMPUTERS</li>
+          <li>LAPTOPS</li>
+          <li>BUILD</li>
+          <li>CONTACT</li>
+        </ul>
+      </div>
     </header>
   );
 };
