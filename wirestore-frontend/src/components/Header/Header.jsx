@@ -6,7 +6,7 @@ import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import PersonIcon from '@mui/icons-material/Person';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
-const Header = ({ inputVal = '' }) => {
+const Header = ({ inputVal = '', headerItems }) => {
   const [isSearchInputOpen, setIsSearchInputOpen] = useState(false);
   const [searchValue, setSearchValue] = useState(inputVal);
 
@@ -56,11 +56,11 @@ const Header = ({ inputVal = '' }) => {
       </div>
       <div className="subheader-component">
         <ul>
-          <li className="selected">HOME</li>
-          <li>COMPUTERS</li>
-          <li>LAPTOPS</li>
-          <li>BUILD</li>
-          <li>CONTACT</li>
+          {headerItems.map((x, i) => (
+            <li key={i} className="selected">
+              {x.display}
+            </li>
+          ))}
         </ul>
       </div>
     </header>
