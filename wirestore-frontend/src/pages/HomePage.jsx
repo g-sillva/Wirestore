@@ -1,6 +1,7 @@
 import React from 'react';
 import MobileHeader from '../components/MobileHeader/MobileHeader';
-// import Header from '../components/Header/Header';
+import { useWindowSize } from '../hooks/useWindowSize';
+import Header from '../components/Header/Header';
 
 const headerItems = [
   {
@@ -26,10 +27,15 @@ const headerItems = [
 ];
 
 const HomePage = () => {
+  const [width] = useWindowSize();
+
   return (
     <div>
-      {/* <Header headerItems={subHeaderItems} /> */}
-      <MobileHeader headerItems={headerItems} />
+      {width > 768 ? (
+        <Header headerItems={headerItems} />
+      ) : (
+        <MobileHeader headerItems={headerItems} />
+      )}
       HomePage
     </div>
   );
