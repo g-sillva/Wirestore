@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { headerService } from '../../services/headerService';
 import './Header.scss';
 
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
@@ -7,7 +8,7 @@ import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import PersonIcon from '@mui/icons-material/Person';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
-const Header = ({ inputVal = '', headerItems }) => {
+const Header = ({ inputVal = '' }) => {
   const [isSearchInputOpen, setIsSearchInputOpen] = useState(false);
   const [searchValue, setSearchValue] = useState(inputVal);
 
@@ -59,7 +60,7 @@ const Header = ({ inputVal = '', headerItems }) => {
       </div>
       <div className="subheader-component">
         <ul>
-          {headerItems.map((x, i) => (
+          {headerService.getItemsList().map((x, i) => (
             <li key={i} className={`${pathname === x.url ? 'selected' : ''}`}>
               <Link to={x.url}>{x.display}</Link>
             </li>

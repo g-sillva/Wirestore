@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { headerService } from '../../services/headerService';
 import './MobileHeader.scss';
 
 import CloseIcon from '@mui/icons-material/Close';
@@ -9,7 +10,7 @@ import PersonIcon from '@mui/icons-material/Person';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import MenuIcon from '@mui/icons-material/Menu';
 
-const MobileHeader = ({ inputVal = '', headerItems }) => {
+const MobileHeader = ({ inputVal = '' }) => {
   const [searchValue, setSearchValue] = useState(inputVal);
   const [isMobileHeaderOpen, setIsMobileHeaderOpen] = useState(false);
 
@@ -65,7 +66,7 @@ const MobileHeader = ({ inputVal = '', headerItems }) => {
         </div>
         <div className="mobile-header-items-container">
           <ul>
-            {headerItems.map((x, i) => (
+            {headerService.getItemsList().map((x, i) => (
               <li key={i} className={`${pathname === x.url ? 'selected' : ''}`}>
                 <Link to={x.url}>{x.display}</Link>
               </li>
